@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Форма выбора питомца</title>
@@ -7,9 +7,48 @@
 </head>
 <body>
 <main>
-    <h1>Найди себе друга!</h1>
+    <h1>Найди себе друга!</h1>  
 
-    <!--Форму размещай тут-->
+    <form action="/pets/orders" method="post">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" placeholder="Саня" value="Cаня" required><br><br>
+        <label for="petType">Тип питомца:</label>
+        <select id="petType" name="petType" required>
+            <option value="cat" selected>Кошка</option>
+            <option value="dog">Собака</option>
+            <option value="parrot">Попугай</option>
+            <option value="fish">Рыба</option>
+        </select><br><br>
+        <fieldset>
+            <legend>Пол питомца:</legend>
+            <input type="radio" id="boy" name="gender" value="boy" checked>
+            <label for="male">Мужской</label>
+            <input type="radio" id="girl" name="gender" value="girl">
+            <label for="female">Женский</label>
+        </fieldset><br><br>
+        <label for="eyeColor">Цвет глаз:</label>
+        <input type="color" id="eyeColor" name="eyeColor" value="#3399ff" required><br><br>
+
+        <label for="tailLength">Длина хвоста:</label>
+        <input type="number" id="tailLength" name="tailLength" min="0" max="30" value="15" required><br><br>
+
+        <label for="dateOfBirth">Дата рождения:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" value="2026-14-04" required><br><br>
+
+        <label for="email">Ваш email:</label>
+        <input type="email" id="email" name="email" placeholder="email@pupu.com" value="email@pupu.com" required><br><br>
+        <label for="phone">Ваш телефон:</label>
+        <input type="phone" id="phone" name="phone" placeholder="+71234567890" value="+71234567890" required><br><br>
+        <fieldset>
+            <legend>Согласие с правилами</legend>
+            <label>
+                <input type="checkbox" name="rules" value="true" required>
+                Я принимаю правила
+            </label><input type="checkbox" name="rules" value="true" required>
+        </fieldset><br>
+        <button type="submit">Отправить заявку</button>
+        <button type="reset">Сбросить</button>
+    </form>
 
 </main>
 </body>
